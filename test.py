@@ -2,6 +2,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+import time
 
 # ブラウザの起動時のオプション設定
 chrome_options = Options()
@@ -24,3 +25,9 @@ serachButton = driver.find_element(By.NAME,"btnK")
 # ボタンをクリックする。
 # 実行環境で異なるらしく、windows環境だとこれが安定する。
 driver.execute_script('arguments[0].click();', serachButton)
+
+#5秒待つ(表示をみるだけ)
+time.sleep(5)
+
+#終了する
+driver.quit()
